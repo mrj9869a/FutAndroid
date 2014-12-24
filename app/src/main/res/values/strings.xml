@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MyFut</string>
+    <string name="app_name">LaDecibelle</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="Welcome">Bienvenue!</string>
+    <string name="ContactLink">Contact</string>
+    <string name="BiereLink">Notre Biere</string>
+    <string name="ConceptLink">Le Concept</string>
+    <string name="CommandLink">Commander !</string>
+    <string name="MusiqueLink">Nos Musiques</string>
 
 </resources>
