@@ -1,9 +1,11 @@
 package com.example.jerome.myfut;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends Activity {
@@ -35,5 +37,35 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**Called when the user clicks on "button2" button**/
+    public void ourBeer (View view){
+        Intent intent = new Intent(this, OurBeer.class);
+        startActivity(intent);
+    }
+
+    /**Called when the user clicks on "button3" button**/
+    public void concept (View view){
+        Intent intent = new Intent(this, Concept.class);
+        startActivity(intent);
+    }
+
+    /**Called when the user clicks on "button4" button**/
+    public void order (View view){
+        Intent intent = new Intent(this, Order.class);
+        startActivity(intent);
+    }
+
+    /**Called when the user clicks on "button5" button**/
+    public void ourMusic (View view){
+        Intent intent = new Intent(this, OurMusic.class);
+        startActivity(intent);
+    }
+
+    /**Called when the user clicks on "contact" button**/
+    public void contact (View view){
+        Intent intent = new Intent(this, Contact.class);
+        startActivity(intent);
     }
 }

@@ -10,5 +10,10 @@
     <string name="ConceptLink">Le Concept</string>
     <string name="CommandLink">Commander !</string>
     <string name="MusiqueLink">Nos Musiques</string>
+    <string name="title_activity_our_beer">OurBeer</string>
+    <string name="title_activity_concept">Concept</string>
+    <string name="title_activity_order">Order</string>
+    <string name="title_activity_our_music">OurMusic</string>
+    <string name="title_activity_contact">Contact</string>
 
 </resources>

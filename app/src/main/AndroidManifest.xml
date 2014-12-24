@@ -8,13 +8,49 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.jerome.myfut.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".OurBeer"
+            android:label="@string/title_activity_our_beer"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jerome.myfut.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Concept"
+            android:label="@string/title_activity_concept"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jerome.myfut.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Order"
+            android:label="@string/title_activity_order"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jerome.myfut.MainActivity" />
+        </activity>
+        <activity
+            android:name=".OurMusic"
+            android:label="@string/title_activity_our_music"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jerome.myfut.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Contact"
+            android:label="@string/title_activity_contact" >
         </activity>
     </application>
 

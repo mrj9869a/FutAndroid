@@ -32,35 +32,41 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/main_layout"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:layout_marginBottom="40dp">
 
             <Button
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:text="@string/BiereLink"
-                android:id="@+id/button" />
+                android:onClick="ourBeer"
+                android:id="@+id/button2" />
 
             <Button
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:text="@string/ConceptLink"
-                android:id="@+id/button3" />
+                android:id="@+id/button3"
+                android:onClick="concept" />
 
             <Button
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:text="@string/CommandLink"
-                android:id="@+id/button4" />
+                android:id="@+id/button4"
+                android:onClick="order" />
             <Button
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:text="@string/MusiqueLink"
-                android:id="@+id/button5" />
+                android:id="@+id/button5"
+                android:onClick="ourMusic" />
             <Button
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:text="@string/ContactLink"
-                android:id="@+id/button6" />
+                android:id="@+id/button6"
+                android:onClick="contact" />
 
         </LinearLayout>
     </FrameLayout>
