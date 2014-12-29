@@ -5,14 +5,13 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.lang.ref.WeakReference;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -23,7 +22,8 @@ public class Order extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        new DLTask().execute("http://fabrigli.fr/cours/example.json");
+      //  new DLTask().execute("http://fabrigli.fr/cours/example.json");
+        new DLTask().execute("http://binouze.fabrigli.fr/bieres/2.json");
     }
 
     @Override
@@ -70,7 +70,8 @@ public class Order extends Activity {
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");
                 conn.connect();
-                int response = conn.getResponseCode();
+               //int response = conn.getResponseCode();
+                is = conn.getInputStream();
 
                 //Convert the InputStream into a string
                 String contentAsString = readIt(is,500);
@@ -82,7 +83,7 @@ public class Order extends Activity {
             }
         }
 
-        public String readIt(InputStream stream, int len) throws IOException, UnsupportedOperationException{
+        public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException{
             Reader reader = null;
             reader = new InputStreamReader(stream,"UTF-8");
             char[] buffer = new char [len];
