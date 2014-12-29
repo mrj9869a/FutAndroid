@@ -15,5 +15,11 @@
     <string name="title_activity_order">Order</string>
     <string name="title_activity_our_music">OurMusic</string>
     <string name="title_activity_contact">Contact</string>
+    <string name="ContactContains">NOUS CONTACTER\n SAVOURER\n DISCUTER</string>
+    <string name="ContactContains2">Vous pouvez nous contacter par mail :</string>
+    <string name="ContactContains3">information@ladecibelle.com \n</string>
+    <string name="ContactContains4">Ou par téléphone :</string>
+    <string name="ContactContains5">+33.(0)6.31.46.96.50 \n</string>
+    <string name="ContactContains6">KEEP IN TOUCH</string>
 
 </resources>
