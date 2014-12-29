@@ -21,5 +21,8 @@
     <string name="ContactContains4">Ou par téléphone :</string>
     <string name="ContactContains5">+33.(0)6.31.46.96.50 \n</string>
     <string name="ContactContains6">KEEP IN TOUCH</string>
+    <string name="textConcept">Artisanale mais pas classique, il s\'agit d\'une bière blonde spéciale, à haute fermentation.\n\n\n De jours en jours, cette bière est expérimentée selon les musiques, les goûts, et les saisons.\n\n\n La Décibelle est à consommer de préférence bien glacée. Aspect blonde cuivrée, légère et douce.</string>
+    <string name="textConcept2">A ce jour, elle est brassée dans une brasserie artisanale, référence de la République Tchéque, et à terme sera produite en France dès lors que la production pourra être intégralement assurée par P.A.R.L Distribution \n\n\nDisponible en fût de 30 Litres.</string>
+    <string name="textConcept3">INGREDIENT : \n\n EAU PUR DE SOURCE\n MALT\n HOUBLON\n LEVURE\n MUSIQUE</string>
 
 </resources>
