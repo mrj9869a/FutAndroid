@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -18,10 +20,16 @@ import java.net.URL;
 
 public class Order extends Activity {
 
+       ListView lv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+
+        lv = (ListView)findViewById(R.id.lv);
+        String[] listeStrings = {"Fut","Bouteille","Tireuse"};
+        lv.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listeStrings));
+
       //  new DLTask().execute("http://fabrigli.fr/cours/example.json");
         new DLTask().execute("http://binouze.fabrigli.fr/bieres/2.json");
     }
@@ -74,8 +82,7 @@ public class Order extends Activity {
                 is = conn.getInputStream();
 
                 //Convert the InputStream into a string
-                String contentAsString = readIt(is,500);
-                return contentAsString;
+                return readIt(is,500);
             } finally{
                 if (is !=null){
                     is.close();
@@ -83,8 +90,8 @@ public class Order extends Activity {
             }
         }
 
-        public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException{
-            Reader reader = null;
+        public String readIt(InputStream stream, int len) throws IOException {
+            Reader reader;
             reader = new InputStreamReader(stream,"UTF-8");
             char[] buffer = new char [len];
             reader.read(buffer);

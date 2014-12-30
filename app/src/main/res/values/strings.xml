@@ -21,8 +21,14 @@
     <string name="ContactContains4">Ou par téléphone :</string>
     <string name="ContactContains5">+33.(0)6.31.46.96.50 \n</string>
     <string name="ContactContains6">KEEP IN TOUCH</string>
-    <string name="textConcept">Artisanale mais pas classique, il s\'agit d\'une bière blonde spéciale, à haute fermentation.\n\n\n De jours en jours, cette bière est expérimentée selon les musiques, les goûts, et les saisons.\n\n\n La Décibelle est à consommer de préférence bien glacée. Aspect blonde cuivrée, légère et douce.</string>
-    <string name="textConcept2">A ce jour, elle est brassée dans une brasserie artisanale, référence de la République Tchéque, et à terme sera produite en France dès lors que la production pourra être intégralement assurée par P.A.R.L Distribution \n\n\nDisponible en fût de 30 Litres.</string>
-    <string name="textConcept3">INGREDIENT : \n\n EAU PUR DE SOURCE\n MALT\n HOUBLON\n LEVURE\n MUSIQUE</string>
+    <string name="textConcept">La Décibelle est l\'histoire d\'une rencontre, entre une équipe de trois jeunes issue de la banlieue parisienne, passionnés de musiques et de concerts, et du fondateur d\'un label indépendant.\n\n Le Concept est né de deux réflexions:\n La bi\ère est souvent dégustée en profitant d\'un concert, en répétition pour les musiciens, ou en profitant d\'un festival.\n La musique quant à elle, a des effets insoupçonnés sur son environnement,et sur différentes matières comme l\'eau, le vin et les plantes.\n
+
+    </string>
+    <string name="textConcept2">
+        Depuis plusieurs années, une poignée de viticulteurs utilisent la musique en la diffusant sur leurs vignes, et certaines études, affirment que ces effets sont bénéfiques.\n\n Un fait avéré issu des résultats de dizaine d\'années de recherches scientifiques et nous en avons fait l\'expérience sur le processus de création de notre bière.\n\n L\'idée n\'était pas d\'en faire un concept marketing tendance, mais bien de créer une bière, non seulement brassée en musique, mais qui aussi et surtout, participe au financement de la création artistique indépendante.\n
+    </string>
+    <string name="textConcept3">
+        L\à où des grands groupes internationaux profitent depuis des années d\'un secteur tout entier (salles de concerts, festivals, bar concerts...) les artistes n\'ont jamais reçu de soutien en retour, alors qu\'ils font partie intégrante de l\'écosystème de la bière et de son univers.\n\n La Décibelle est donc une bière artisanale qui aide à son échelle, à financer la scène indépendante, mais aussi à la défendre, la propager, et la diffuser au plus grand nombre via les concerts et les réseaux sociaux...\n\n Vous découvrirez chaque mois les artistes indépendants qui ont été diffusés à la cuvée, et en buvant une bière, vous participerez à la production de nouvelles œuvres, des labels indépendants partenaires.
+    </string>
 
 </resources>
