@@ -7,19 +7,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 /***********************************************************
- *Activité secondaire presentant la biere de la decibelle
+ *Activité tertiaire presentant les futs laDecibelle
  ************************************************************/
-public class OurBeer extends Activity {
+public class OrderFut extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_our_beer);
+        setContentView(R.layout.activity_order_fut);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu;
-        getMenuInflater().inflate(R.menu.menu_our_beer, menu);
+        getMenuInflater().inflate(R.menu.menu_contact, menu);
         return true;
     }
 

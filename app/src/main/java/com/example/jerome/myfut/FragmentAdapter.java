@@ -3,7 +3,10 @@ import java.util.List;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
+/***********************************************************
+ *Simple FragmentAdapter
+ * @designPatern:viewPager
+ ************************************************************/
 public class FragmentAdapter extends FragmentPagerAdapter{
     private final List fragments;
 

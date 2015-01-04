@@ -10,47 +10,47 @@
     <string name="ConceptLink">Le Concept</string>
     <string name="CommandLink">Commander !</string>
     <string name="MusiqueLink">Nos Musiques</string>
-    <string name="title_activity_our_beer">OurBeer</string>
-    <string name="title_activity_concept">Concept</string>
-    <string name="title_activity_order">Order</string>
-    <string name="title_activity_our_music">OurMusic</string>
-    <string name="title_activity_contact">Contact</string>
+    <string name="title_activity_our_beer">NOTRE BIERE</string>
+    <string name="title_activity_concept">CONCEPT</string>
+    <string name="title_activity_order">COMMANDE</string>
+    <string name="title_activity_contact">CONTACT</string>
+    <string name="title_activity_orderFut">FUT</string>
+    <string name="title_activity_orderTir">TIREUSE</string>
     <string name="ContactContains">NOUS CONTACTER\n SAVOURER\n DISCUTER</string>
     <string name="ContactContains2">Vous pouvez nous contacter par mail :</string>
     <string name="ContactContains3">information@ladecibelle.com \n</string>
     <string name="ContactContains4">Ou par téléphone :</string>
     <string name="ContactContains5">+33.(0)6.31.46.96.50 \n</string>
     <string name="ContactContains6">KEEP IN TOUCH</string>
-    <string name="textConcept">
-        La Décibelle est l\'histoire d\'une rencontre, entre une équipe de trois jeunes issue de la banlieue parisienne, passionnés de musiques et de concerts, et du fondateur d\'un label indépendant.\n\n
+    <string name="textConcept">        La Décibelle est l\'histoire d\'une rencontre, entre une équipe de trois jeunes issue de la banlieue parisienne, passionnés de musiques et de concerts, et du fondateur d\'un label indépendant.\n\n
         Le Concept est né de deux réflexions:\n
         La bière est souvent dégustée en profitant d\'un concert, en répétition pour les musiciens, ou en profitant d\'un festival.\n
-        La musique quant à elle, a des effets insoupçonnés sur son environnement,et sur différentes matières comme l\'eau, le vin et les plantes.\n
-
-    </string>
-    <string name="textConcept2">
-        Depuis plusieurs années, une poignée de viticulteurs utilisent la musique en la diffusant sur leurs vignes, et certaines études, affirment que ces effets sont bénéfiques.\n\n
+        La musique quant à elle, a des effets insoupçonnés sur son environnement,et sur différentes matières comme l\'eau, le vin et les plantes.\n</string>
+    <string name="textConcept2">        Depuis plusieurs années, une poignée de viticulteurs utilisent la musique en la diffusant sur leurs vignes, et certaines études, affirment que ces effets sont bénéfiques.\n\n
         Un fait avéré issu des résultats de dizaine d\'années de recherches scientifiques et nous en avons fait l\'expérience sur le processus de création de notre bière.\n\n
-        L\'idée n\'était pas d\'en faire un concept marketing tendance, mais bien de créer une bière, non seulement brassée en musique, mais qui aussi et surtout, participe au financement de la création artistique indépendante.\n
-    </string>
-    <string name="textConcept3">
-        Là où des grands groupes internationaux profitent depuis des années d\'un secteur tout entier (salles de concerts, festivals, bar concerts...) les artistes n\'ont jamais reçu de soutien en retour, alors qu\'ils font partie intégrante de l\'écosystème de la bière et de son univers.\n\n
-        La Décibelle est donc une bière artisanale qui aide à son échelle, à financer la scène indépendante, mais aussi à la défendre, la propager, et la diffuser au plus grand nombre via les concerts et les réseaux sociaux...\n\n
-        Vous découvrirez chaque mois les artistes indépendants qui ont été diffusés à la cuvée, et en buvant une bière, vous participerez à la production de nouvelles œuvres, des labels indépendants partenaires.
-    </string>
-    <string name="ourbeer">
-        Artisanale mais pas classique, il s\'agit d\'une bière blonde spéciale, à haute fermentation.\n
+        L\'idée n\'était pas d\'en faire un concept marketing tendance, mais bien de créer une bière, non seulement brassée en musique, mais qui aussi et surtout, participe au financement de la création artistique indépendante.\n</string>
+    <string name="textConcept3">        Là où des grands groupes internationaux profitent depuis des années d\'un secteur tout entier (salles de concerts, festivals, bar concerts…) les artistes n\'ont jamais reçu de soutien en retour, alors qu\'ils font partie intégrante de l\'écosystème de la bière et de son univers.\n\n
+        La Décibelle est donc une bière artisanale qui aide à son échelle, à financer la scène indépendante, mais aussi à la défendre, la propager, et la diffuser au plus grand nombre via les concerts et les réseaux sociaux…\n\n
+        Vous découvrirez chaque mois les artistes indépendants qui ont été diffusés à la cuvée, et en buvant une bière, vous participerez à la production de nouvelles œuvres, des labels indépendants partenaires.</string>
+    <string name="ourbeer">        Artisanale mais pas classique, il s\'agit d\'une bière blonde spéciale, à haute fermentation.\n
         De jours en jours, cette bière est expérimentée selon les musiques, les goûts, et les saisons.\n
         La Décibelle est à consommer de préférence bien glacée.\n
-        Aspect blonde cuivrée, légère et douce.\n\
-     </string>
-    <string name="ourbeer2">
-        A ce jour, elle est brassée dans une brasserie artisanale, référence de la République Tchéque, et à terme sera produite en France dès lors que la production pourra être intégralement assurée par P.A.R.L Distribution\n
+        Aspect blonde cuivrée, légère et douce.\n\</string>
+    <string name="ourbeer2">        A ce jour, elle est brassée dans une brasserie artisanale, référence de la République Tchéque, et à terme sera produite en France dès lors que la production pourra être intégralement assurée par P.A.R.L Distribution\n
         Disponible en fût de 30 Litres.\n\n
         INGREDIENT : EAU PUR DE SOURCE, MALT, HOUBLON, LEVURE, MUSIQUE.</string>
     <string name="access_gp">Google+</string>
     <string name="access_facebook">facebook</string>
     <string name="access_decibelle">logo_decibelle</string>
     <string name="concept">Concept</string>
+    <string name="fragmentLeftPage">1/3</string>
+    <string name="fragmentMiddlePage">2/3</string>
+    <string name="fragmentRightPage">3/3</string>
+    <string name="arrowR">arrowRight</string>
+    <string name="arrowD">arrowDouble</string>
+    <string name="arrowL">arrowLeft</string>
+    <string name="title_activity_order_fut">OrderFut</string>
+    <string name="fut">Nous livrons des futs de 20L chez vous !</string>
+    <string name="tireuse">Avec nos futs pensé à louer notre tireuse !!</string>
 
 </resources>

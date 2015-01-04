@@ -12,9 +12,10 @@ import android.view.MenuItem;
 import java.util.List;
 import java.util.Vector;
 
-
+/***********************************************************
+*Activité secondaire presentant le concept de la decibelle
+************************************************************/
 public class Concept extends FragmentActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +29,7 @@ public class Concept extends FragmentActivity {
         fragments.add(Fragment.instantiate(this,MiddlePageFragment.class.getName()));
         fragments.add(Fragment.instantiate(this,RightPageFragment.class.getName()));
 
-        // Création de l'adapter qui s'occupera de l'affichage de la liste de
-        // Fragments
+        // Création de l'adapter qui s'occupera de l'affichage de la liste de Fragments
         PagerAdapter mPagerAdapter = new FragmentAdapter(super.getSupportFragmentManager(), fragments);
 
         ViewPager pager = (ViewPager) super.findViewById(R.id.concept);
@@ -40,16 +40,14 @@ public class Concept extends FragmentActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_concept, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // Handle action bar item clicks here.
         switch (item.getItemId())
         {
             case R.id.action_order:

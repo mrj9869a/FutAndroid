@@ -5,21 +5,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
 /***********************************************************
- *Activité secondaire presentant la biere de la decibelle
+ *Activité tertiaire presentant la tireuse de la decibelle
  ************************************************************/
-public class OurBeer extends Activity {
+public class OrderTir extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_our_beer);
+        setContentView(R.layout.activity_order_tireuse);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu;
-        getMenuInflater().inflate(R.menu.menu_our_beer, menu);
+        getMenuInflater().inflate(R.menu.menu_contact, menu);
         return true;
     }
 

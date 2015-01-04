@@ -11,9 +11,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-
+/***********************************************************
+ *Classe chargé de recuperer les données de l'interface Rest
+ *@designPatern:intentservice
+ * @designPatern:BroadcastReceiver
+ ************************************************************/
 public class DownloadIntent extends IntentService {
-
     public DownloadIntent() {
         super("DownloadService");
      }
@@ -21,9 +24,9 @@ public class DownloadIntent extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         HttpClient httpclient = new DefaultHttpClient();
+        //Nous avons choisi votre interface car elle correspondait au theme de notre application
         HttpGet httpget = new HttpGet("http://binouze.fabrigli.fr/bieres.json");
         try {
-
             HttpResponse response = httpclient.execute(httpget);
             String jsonResult = inputStreamToString(response.getEntity().getContent()).toString();
             sendResultBroadcast(jsonResult);
@@ -33,6 +36,7 @@ public class DownloadIntent extends IntentService {
         }
     }
 
+    //Ecrit les données recupperée dans une string
     private StringBuilder inputStreamToString(InputStream is)throws IOException{
         String rLine;
         StringBuilder answer = new StringBuilder();
@@ -43,7 +47,6 @@ public class DownloadIntent extends IntentService {
                 answer.append(rLine);
             }
         }
-
         catch (IOException e) {
             e.printStackTrace();
         }

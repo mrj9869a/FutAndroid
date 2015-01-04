@@ -4,7 +4,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.jerome.myfut.Order">
+    tools:context="com.example.jerome.myfut.Order"
+    android:id="@+id/order"
+    android:background="@drawable/logo">
 
     <ListView
         android:layout_width="wrap_content"
@@ -15,12 +17,4 @@
     </ListView>
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="@string/access_decibelle"
-        android:src="@drawable/logo" />
 </RelativeLayout>
