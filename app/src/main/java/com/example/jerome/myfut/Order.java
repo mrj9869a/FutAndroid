@@ -1,37 +1,76 @@
 package com.example.jerome.myfut;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.ArrayList;
 
 
 public class Order extends Activity {
 
-       ListView lv;
+    String[] listNames={"Fut","Biere","Tireuse"};
+    ArrayList<String> list = new ArrayList<String>();
+    //String[] listeTest={"Test","tutt"};
+    ListView lv;
+    ListView lvS;
+    TextView textView;
+    ProgressDialog pd;
+    ArrayAdapter<String> adapters;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
-        lv = (ListView)findViewById(R.id.lv);
-        String[] listeStrings = {"Fut","Bouteille","Tireuse"};
-        lv.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listeStrings));
+        lv = (ListView) findViewById(R.id.lv);
+        lvS = (ListView) findViewById(R.id.lvS);
+        String[] listeStrings = new String[]{"Fut","Bouteille","Tireuse"};
 
-      //  new DLTask().execute("http://fabrigli.fr/cours/example.json");
-        new DLTask().execute("http://binouze.fabrigli.fr/bieres/2.json");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,listeStrings);
+        lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                // ListView Clicked item index
+                int itemPosition = position;
+
+                // ListView Clicked item value
+                String itemValue =(String) lv.getItemAtPosition(position);
+                if (itemValue == "Bouteille"){getData(textView);}
+
+                // Show Alert
+                Toast.makeText(getApplicationContext(),"Choix: "+itemValue, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+     //   "http://binouze.fabrigli.fr/bieres/2.json"
+        registerReceiver(new WebServiceBroadcast(), new IntentFilter("com.ram.CUSTOM_BROADCAST"));
+        //textView = (TextView) findViewById(R.id.textView);
+       adapters = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,list);
+        lvS.setAdapter(adapters);
+    }
+    public void getData(View v) {
+        pd = ProgressDialog.show(Order.this, "loading", "wait");
+        Intent intentService = new Intent(getApplicationContext(),DownloadIntent.class);
+        startService(intentService);
     }
 
     @Override
@@ -52,50 +91,32 @@ public class Order extends Activity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-    private class DLTask extends AsyncTask<String, Void, String> {
+    class WebServiceBroadcast extends BroadcastReceiver {
         @Override
-        protected String doInBackground(String... urls) {
+        public void onReceive(Context context, Intent intent) {
+            pd.cancel();
+            String jsonResult = intent.getStringExtra("jsonresult");
+            JSONArray jsonArray = null;
+
             try {
-                return downloadUrl(urls[0]);
-            } catch (IOException e) {
-                return "Unable to retrieve web page, URL may be invalid.";
-            }
-        }
 
-        @Override
-        protected void onPostExecute(String result){
-            Toast.makeText(getApplication().getApplicationContext(),result,Toast.LENGTH_LONG).show();
-        }
+                jsonArray = new JSONArray(jsonResult);
+                for (int i = 0; i < 2; i++) {
 
-        private String downloadUrl(String myurl) throws IOException {
-            InputStream is = null;
-            try{
-                URL url = new URL(myurl);
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestMethod("GET");
-                conn.connect();
-               //int response = conn.getResponseCode();
-                is = conn.getInputStream();
-
-                //Convert the InputStream into a string
-                return readIt(is,500);
-            } finally{
-                if (is !=null){
-                    is.close();
+                    String test = jsonArray.getJSONObject(i).getString("category").toString();
+                    list.add(jsonArray.getJSONObject(i).getString("category").toString());
+                    adapters.notifyDataSetChanged();
+                //    textView.append("category: "+ jsonArray.getJSONObject(i).getString("category").toString() + "\n");
+               //     textView.append("name: "+ jsonArray.getJSONObject(i).getString("name").toString() + "\n");
+                //    textView.append("" + "\n");
                 }
+            } catch (JSONException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
-        }
-
-        public String readIt(InputStream stream, int len) throws IOException {
-            Reader reader;
-            reader = new InputStreamReader(stream,"UTF-8");
-            char[] buffer = new char [len];
-            reader.read(buffer);
-            return new String(buffer);
         }
     }
 }
