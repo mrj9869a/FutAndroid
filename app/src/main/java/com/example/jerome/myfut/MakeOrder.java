@@ -9,11 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-/**
- * Created by Jerome on 04/01/2015.
- */
 public class MakeOrder extends Activity{
 
     ListView lv;
@@ -25,17 +21,14 @@ public class MakeOrder extends Activity{
 
         lv = (ListView) findViewById(R.id.lv);
         String[] listeStrings = new String[]{"Fut","Bouteille","Tireuse"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,listeStrings);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,android.R.id.text1,listeStrings);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-                // ListView Clicked item index
-                int itemPosition = position;
-
-                // ListView Clicked item value
+                 // ListView Clicked item value
                 String itemValue =(String) lv.getItemAtPosition(position);
-                if (itemValue == "Bouteille"){
+                if (itemValue.equals("Bouteille")){
                     Intent intent;
                     intent = new Intent(getApplicationContext(), Order.class);
                     startActivity(intent)

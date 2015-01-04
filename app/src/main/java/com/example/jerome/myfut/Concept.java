@@ -15,14 +15,13 @@ import java.util.Vector;
 
 public class Concept extends FragmentActivity {
 
-    private PagerAdapter mPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_concept);
 
         // Création de la liste de Fragments que fera défiler le PagerAdapter
-        List fragments = new Vector();
+        List<Fragment> fragments = new Vector<>();
 
         // Ajout des Fragments dans la liste
         fragments.add(Fragment.instantiate(this,LeftPageFragment.class.getName()));
@@ -31,11 +30,11 @@ public class Concept extends FragmentActivity {
 
         // Création de l'adapter qui s'occupera de l'affichage de la liste de
         // Fragments
-        this.mPagerAdapter = new FragmentAdapter(super.getSupportFragmentManager(), fragments);
+        PagerAdapter mPagerAdapter = new FragmentAdapter(super.getSupportFragmentManager(), fragments);
 
         ViewPager pager = (ViewPager) super.findViewById(R.id.concept);
         // Affectation de l'adapter au ViewPager
-        pager.setAdapter(this.mPagerAdapter);
+        pager.setAdapter(mPagerAdapter);
     }
 
 

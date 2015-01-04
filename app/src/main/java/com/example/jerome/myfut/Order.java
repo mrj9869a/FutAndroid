@@ -6,9 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,8 +24,7 @@ import java.util.ArrayList;
 
 public class Order extends Activity {
 
-    String[] listNames={"Fut","Biere","Tireuse"};
-    ArrayList<String> list = new ArrayList<String>();
+    ArrayList<String> list = new ArrayList<>();
     ListView lvS;
     TextView textView;
     ProgressDialog pd;
@@ -41,7 +38,7 @@ public class Order extends Activity {
        lvS = (ListView) findViewById(R.id.lvS);
        getData(textView);
        registerReceiver(new WebServiceBroadcast(), new IntentFilter("com.ram.CUSTOM_BROADCAST"));
-       adapters = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,list);
+       adapters = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,android.R.id.text1,list);
        lvS.setAdapter(adapters);
         lvS.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -55,7 +52,7 @@ public class Order extends Activity {
     }
 
     public void getData(View v) {
-        pd = ProgressDialog.show(Order.this, "loading", "wait");
+        pd = ProgressDialog.show(Order.this, "Downloading", "Une seconde, nous descendons à la cave...");
         Intent intentService = new Intent(getApplicationContext(),DownloadIntent.class);
         startService(intentService);
     }
@@ -90,14 +87,12 @@ public class Order extends Activity {
         public void onReceive(Context context, Intent intent) {
             pd.cancel();
             String jsonResult = intent.getStringExtra("jsonresult");
-            JSONArray jsonArray = null;
+            JSONArray jsonArray;
             try {
 
                 jsonArray = new JSONArray(jsonResult);
                 for (int i = 0; i < jsonArray.length(); i++) {
-
-                    String test = jsonArray.getJSONObject(i).getString("name").toString();
-                    list.add(jsonArray.getJSONObject(i).getString("name").toString());
+                   list.add(jsonArray.getJSONObject(i).getString("name"));
                     adapters.notifyDataSetChanged();
                 //    textView.append("category: "+ jsonArray.getJSONObject(i).getString("category").toString() + "\n");
                //     textView.append("name: "+ jsonArray.getJSONObject(i).getString("name").toString() + "\n");
