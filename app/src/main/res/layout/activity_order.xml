@@ -13,16 +13,14 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
     </ListView>
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <ListView
-        android:layout_width="wrap_content"
+
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/lvS"
+        android:id="@+id/imageView3"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/access_decibelle"
+        android:src="@drawable/logo" />
 </RelativeLayout>

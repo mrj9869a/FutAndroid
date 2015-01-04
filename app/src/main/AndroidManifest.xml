@@ -33,7 +33,7 @@
                 android:value="com.example.jerome.myfut.MainActivity" />
         </activity>
         <activity
-            android:name=".Order"
+            android:name=".MakeOrder"
             android:label="@string/title_activity_order"
             android:parentActivityName=".MainActivity" >
             <meta-data
@@ -41,9 +41,9 @@
                 android:value="com.example.jerome.myfut.MainActivity" />
         </activity>
         <activity
-            android:name=".OurMusic"
-            android:label="@string/title_activity_our_music"
-            android:parentActivityName=".MainActivity" >
+            android:name=".Order"
+            android:label="@string/title_activity_order"
+            android:parentActivityName=".MakeOrder" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.jerome.myfut.MainActivity" />

@@ -28,8 +28,6 @@ public class Order extends Activity {
 
     String[] listNames={"Fut","Biere","Tireuse"};
     ArrayList<String> list = new ArrayList<String>();
-    //String[] listeTest={"Test","tutt"};
-    ListView lv;
     ListView lvS;
     TextView textView;
     ProgressDialog pd;
@@ -38,35 +36,24 @@ public class Order extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order);
+        setContentView(R.layout.list_beer);
 
-        lv = (ListView) findViewById(R.id.lv);
-        lvS = (ListView) findViewById(R.id.lvS);
-        String[] listeStrings = new String[]{"Fut","Bouteille","Tireuse"};
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,listeStrings);
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+       lvS = (ListView) findViewById(R.id.lvS);
+       getData(textView);
+       registerReceiver(new WebServiceBroadcast(), new IntentFilter("com.ram.CUSTOM_BROADCAST"));
+       adapters = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,list);
+       lvS.setAdapter(adapters);
+        lvS.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-                // ListView Clicked item index
-                int itemPosition = position;
-
                 // ListView Clicked item value
-                String itemValue =(String) lv.getItemAtPosition(position);
-                if (itemValue == "Bouteille"){getData(textView);}
-
+                String itemValue =(String) lvS.getItemAtPosition(position);
                 // Show Alert
-                Toast.makeText(getApplicationContext(),"Choix: "+itemValue, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), itemValue+ " est en rupture de stock :( " , Toast.LENGTH_SHORT).show();
             }
         });
-
-     //   "http://binouze.fabrigli.fr/bieres/2.json"
-        registerReceiver(new WebServiceBroadcast(), new IntentFilter("com.ram.CUSTOM_BROADCAST"));
-        //textView = (TextView) findViewById(R.id.textView);
-       adapters = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,list);
-        lvS.setAdapter(adapters);
     }
+
     public void getData(View v) {
         pd = ProgressDialog.show(Order.this, "loading", "wait");
         Intent intentService = new Intent(getApplicationContext(),DownloadIntent.class);
@@ -85,13 +72,17 @@ public class Order extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId())
+        {
+            case R.id.action_order:
+                Intent intent = new Intent(this, MakeOrder.class);
+                startActivity(intent);
+                return true;
+            case R.id.action_settings:
+                return true;
+            default :
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
     class WebServiceBroadcast extends BroadcastReceiver {
@@ -100,22 +91,20 @@ public class Order extends Activity {
             pd.cancel();
             String jsonResult = intent.getStringExtra("jsonresult");
             JSONArray jsonArray = null;
-
             try {
 
                 jsonArray = new JSONArray(jsonResult);
-                for (int i = 0; i < 2; i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
 
-                    String test = jsonArray.getJSONObject(i).getString("category").toString();
-                    list.add(jsonArray.getJSONObject(i).getString("category").toString());
+                    String test = jsonArray.getJSONObject(i).getString("name").toString();
+                    list.add(jsonArray.getJSONObject(i).getString("name").toString());
                     adapters.notifyDataSetChanged();
                 //    textView.append("category: "+ jsonArray.getJSONObject(i).getString("category").toString() + "\n");
                //     textView.append("name: "+ jsonArray.getJSONObject(i).getString("name").toString() + "\n");
                 //    textView.append("" + "\n");
                 }
             } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                 e.printStackTrace();
             }
         }
     }

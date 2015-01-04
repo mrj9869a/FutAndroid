@@ -31,7 +31,7 @@ public class Contact extends Activity {
         switch (item.getItemId())
         {
             case R.id.action_order:
-                Intent intent = new Intent(this, Order.class);
+                Intent intent = new Intent(this, MakeOrder.class);
                 startActivity(intent);
                 return true;
             case R.id.action_settings:

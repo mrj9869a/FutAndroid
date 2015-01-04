@@ -39,7 +39,6 @@ public class DownloadIntent extends IntentService {
 
             HttpResponse response = httpclient.execute(httpget);
             String jsonResult = inputStreamToString(response.getEntity().getContent()).toString();
-            Log.i("MyActivity", "FUKKKKKKYEAAAA " + jsonResult);
             if (jsonResult != null) {
                 sendResultBroadcast(jsonResult);
             }

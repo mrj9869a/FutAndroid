@@ -55,12 +55,7 @@
                 android:text="@string/CommandLink"
                 android:id="@+id/button4"
                 android:onClick="order" />
-            <Button
-                android:layout_width="190dp"
-                android:layout_height="wrap_content"
-                android:text="@string/MusiqueLink"
-                android:id="@+id/button5"
-                android:onClick="ourMusic" />
+
             <Button
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"

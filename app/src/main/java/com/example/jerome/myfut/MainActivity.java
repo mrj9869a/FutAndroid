@@ -53,17 +53,11 @@ public class MainActivity extends Activity {
 
     /**Called when the user clicks on "button4" button**/
     public void order (View view){
-        Intent intent = new Intent(this, Order.class);
+        Intent intent = new Intent(this, MakeOrder.class);
         startActivity(intent);
     }
 
-    /**Called when the user clicks on "button5" button**/
-    public void ourMusic (View view){
-        Intent intent = new Intent(this, OurMusic.class);
-        startActivity(intent);
-    }
-
-    /**Called when the user clicks on "contact" button**/
+       /**Called when the user clicks on "contact" button**/
     public void contact (View view){
         Intent intent = new Intent(this, Contact.class);
         startActivity(intent);
