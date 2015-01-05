@@ -31,7 +31,6 @@ public class Concept extends FragmentActivity {
 
         // Création de l'adapter qui s'occupera de l'affichage de la liste de Fragments
         PagerAdapter mPagerAdapter = new FragmentAdapter(super.getSupportFragmentManager(), fragments);
-
         ViewPager pager = (ViewPager) super.findViewById(R.id.concept);
         // Affectation de l'adapter au ViewPager
         pager.setAdapter(mPagerAdapter);

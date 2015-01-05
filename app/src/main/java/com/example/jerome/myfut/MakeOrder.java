@@ -58,7 +58,7 @@ public class MakeOrder extends Activity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu;
-        getMenuInflater().inflate(R.menu.menu_contact, menu);
+        getMenuInflater().inflate(R.menu.menu_order, menu);
         return true;
     }
 
