@@ -6,15 +6,17 @@ android {
 
     defaultConfig {
         applicationId "com.example.jerome.myfut"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        release1 {
+            versionNameSuffix 'Final'
+        }
+        release_final {
+            versionNameSuffix 'biancherin_merle'
         }
     }
 }
